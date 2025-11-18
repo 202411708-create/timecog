@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine, LineChart, Line, Area, AreaChart } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine, LineChart, Line, Area, AreaChart, Cell } from 'recharts';
 import type { RoundResult } from '../../types';
 import MujiIcon from '../common/MujiIcon';
 
@@ -22,12 +22,9 @@ export default function ResultChart({ results }: ResultChartProps) {
   const averageAbsError = results.reduce((sum, r) => sum + Math.abs(r.error), 0) / results.length;
   const averageAbsErrorSeconds = averageAbsError / 1000;
 
-  // 최고/최저 기록
+  // 최고 기록
   const bestResult = results.reduce((best, r) =>
     Math.abs(r.error) < Math.abs(best.error) ? r : best
-  );
-  const worstResult = results.reduce((worst, r) =>
-    Math.abs(r.error) > Math.abs(worst.error) ? r : worst
   );
 
   // 일관성 (표준편차)
@@ -181,7 +178,7 @@ export default function ResultChart({ results }: ResultChartProps) {
             <Legend />
             <Bar dataKey="절대오차" fill="#6b6b6b" radius={[8, 8, 0, 0]}>
               {chartData.map((entry, index) => (
-                <cell key={`cell-${index}`} fill={entry.절대오차 < 1 ? '#10b981' : entry.절대오차 < 2 ? '#3a3a3a' : '#f59e0b'} />
+                <Cell key={`cell-${index}`} fill={entry.절대오차 < 1 ? '#10b981' : entry.절대오차 < 2 ? '#3a3a3a' : '#f59e0b'} />
               ))}
             </Bar>
           </BarChart>
