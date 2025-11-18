@@ -4,7 +4,12 @@
       "Bash(npm install:*)",
       "Bash(npm run build:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: ADHD 학생을 위한 시간 인지 능력 테스트 프로그램 (TimeCog)\n\n주요 기능:\n- 10초 시간 감각 테스트 (5라운드)\n- 실시간 타이머 (초 숫자 숨김 처리)\n- 종합 데이터 분석 및 시각화\n  * 평균 오차, 경향성, 일관성 분석\n  * 최고 기록, 표준편차, 개선도 통계\n  * Area Chart, Line Chart, Bar Chart 시각화\n- PET 전략 기반 자기성찰 기능\n- localStorage 자동 저장\n- 뒤로가기 및 초기화 기능\n\n기술 스택:\n- React 18 + TypeScript\n- Vite\n- Tailwind CSS\n- Zustand (상태 관리)\n- Framer Motion (애니메이션)\n- Recharts (차트 시각화)\n\n디자인:\n- 무인양품(MUJI) 미니멀 스타일\n- ADHD 학생의 집중력을 방해하지 않는 UI\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git config:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
